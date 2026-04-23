@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsulWorks - Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">AsulWorks</div>
+        <ul class="navbar-nav">
+            <li><a href="workerdashboard.html" id="nav-dashboard">Find Jobs</a></li>
+            <li><a href="applicationtracking.html" id="nav-tracking">My Applications</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="mb-2">Discover Job Opportunities</h2>
+        <div class="filters">
+            <div class="form-group" style="margin-bottom:0;"><label>Search Jobs</label><input type="text" id="searchTitle" class="form-control" oninput="filterJobs()"></div>
+            <div class="form-group" style="margin-bottom:0;"><label>Job Type</label><select id="filterType" class="form-control" onchange="filterJobs()"><option value="All">All Types</option><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option></select></div>
+            <div class="form-group" style="margin-bottom:0;"><label>Daily Wage</label><select id="filterWage" class="form-control" onchange="filterJobs()"><option value="All">Any Wage</option><option value="Below700">Below 700 PHP</option><option value="Exact700">700 PHP</option><option value="Above700">Above 700 PHP</option></select></div>
+            <button class="btn" style="height: 46px;" onclick="filterJobs()">Search</button>
+        </div>
+        <div id="job-listings-container" class="job-grid"></div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

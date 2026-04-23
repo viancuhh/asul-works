@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsulWorks - Job Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">AsulWorks <span style="font-size: 1rem; font-weight: normal;">| Employer</span></div>
+        <ul class="navbar-nav">
+            <li><a href="employerdashboard.html">Dashboard</a></li>
+            <li><a href="jobmanagement.html" class="active">Job Management</a></li>
+            <li><a href="applicanttracking.html">Applicant Tracking</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="mb-2">Job Management</h2>
+        
+        <!-- Create Job Form -->
+        <div class="card">
+            <h3 class="mb-2" style="border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem;">Create New Job Listing</h3>
+            <form onsubmit="handleCreateJob(event)">
+                <div class="form-row">
+                    <div class="form-group"><label>Job Title</label><input type="text" id="jobTitle" class="form-control" required></div>
+                    <div class="form-group"><label>Daily Wage (PHP)</label><input type="number" id="jobWage" class="form-control" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Location</label><input type="text" id="jobLocation" class="form-control" required></div>
+                    <div class="form-group">
+                        <label>Job Type</label>
+                        <select id="jobType" class="form-control" required>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group"><label>Schedule</label><input type="text" id="jobSchedule" class="form-control" required placeholder="e.g. Mon-Fri, 8AM-5PM"></div>
+                <div class="form-group"><label>Required Skills</label><input type="text" id="jobSkills" class="form-control" required placeholder="Comma-separated"></div>
+                <div class="form-group"><label>Job Description</label><textarea id="jobDesc" class="form-control" rows="3" required></textarea></div>
+                
+                <button type="submit" class="btn">Submit for Admin Approval</button>
+            </form>
+        </div>
+
+        <!-- Listed Jobs Table -->
+        <div class="card" style="padding: 0; overflow-x: auto;">
+            <table class="tracking-table">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Wage</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="employer-jobs-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="js/employer-script.js"></script>
+</body>
+</html>

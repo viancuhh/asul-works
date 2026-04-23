@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsulWorks - Tracking</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">AsulWorks</div>
+        <ul class="navbar-nav">
+            <li><a href="workerdashboard.html">Find Jobs</a></li>
+            <li><a href="applicationtracking.html" id="nav-tracking">My Applications</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2 class="mb-2">My Applications Status</h2>
+        <div class="card" style="padding: 0; overflow-x: auto;">
+            <table class="tracking-table">
+                <thead><tr><th>Job Title</th><th>Employer Location</th><th>Date Applied</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody id="tracking-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

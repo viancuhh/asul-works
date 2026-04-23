@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsulWorks - Apply</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">AsulWorks</div>
+        <ul class="navbar-nav">
+            <li><a href="workerdashboard.html">Find Jobs</a></li>
+            <li><a href="applicationtracking.html">My Applications</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" style="max-width: 800px;">
+        <button class="btn btn-outline btn-small mb-2" onclick="window.location.href='jobdetails.html'">&larr; Back to Job Details</button>
+        
+        <div class="card">
+            <h2 class="mb-2">Job Application Form</h2>
+            <div style="background-color: var(--light-blue); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">
+                <strong>Applying for:</strong> <span id="apply-job-title" style="color: var(--primary-blue); font-weight: bold;">Loading...</span>
+            </div>
+            
+            <form id="applicationForm" onsubmit="submitApplication(event)">
+                
+                <!-- SECTION 1: PRE-FILLED PERSONAL INFO -->
+                <h3 class="mb-1" style="font-size: 1.1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.5rem;">Personal Information</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem;">These details are pre-filled from your registered account.</p>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="prefName" class="form-control" disabled style="background-color: #f3f4f6;">
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date" id="prefDOB" class="form-control" disabled style="background-color: #f3f4f6;">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="prefEmail" class="form-control" disabled style="background-color: #f3f4f6;">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" id="prefContact" class="form-control" disabled style="background-color: #f3f4f6;">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Complete Address</label>
+                    <input type="text" id="prefAddress" class="form-control" disabled style="background-color: #f3f4f6;">
+                </div>
+
+                <!-- SECTION 2: QUALIFICATIONS & EDUCATION -->
+                <h3 class="mb-1 mt-2" style="font-size: 1.1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.5rem;">Education & Qualifications</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Highest Level of Education *</label>
+                        <select id="appEducation" class="form-control" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="High School Graduate">High School Graduate</option>
+                            <option value="Vocational / Trade School">Vocational / Trade School</option>
+                            <option value="College Undergraduate">College Undergraduate</option>
+                            <option value="College Graduate">College Graduate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>School / University *</label>
+                        <input type="text" id="appSchool" class="form-control" required placeholder="Name of institution">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Degree / Course (If applicable)</label>
+                    <input type="text" id="appDegree" class="form-control" placeholder="e.g., BS Information Technology, Automotive Servicing NC II">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Relevant Skills *</label>
+                        <textarea id="appSkills" class="form-control" rows="3" required placeholder="List your skills separated by commas (e.g., Welding, Driving, Heavy Machinery)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Certifications (Optional)</label>
+                        <textarea id="appCerts" class="form-control" rows="3" placeholder="List your valid certifications (e.g., TESDA NC II Welding)"></textarea>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: APPLICATION DETAILS -->
+                <h3 class="mb-1 mt-2" style="font-size: 1.1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.5rem;">Application Details</h3>
+                
+                <div class="form-group">
+                    <label>Short Pitch *</label>
+                    <textarea id="appPitch" class="form-control" rows="3" required placeholder="Briefly tell the employer why you are the best fit for this job..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Earliest Available Start Date *</label>
+                        <input type="date" id="appStartDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Resume Attachment (PDF only) *</label>
+                        <input type="file" id="appResume" class="form-control" accept=".pdf" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn mt-2">Submit Application</button>
+            </form>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
