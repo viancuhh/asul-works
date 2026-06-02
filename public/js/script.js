@@ -3,9 +3,9 @@
 // ==========================================
 
 // Global state to hold fetched data for fast filtering
-let activeJobs = []; 
+let activeJobs = []; 2
 let workerApps = [];
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';2
 
 // --- PAGE ROUTER & INITIALIZER ---
 document.addEventListener('DOMContentLoaded', () => {
