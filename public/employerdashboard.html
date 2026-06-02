@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsulWorks - Employer Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">AsulWorks <span style="font-size: 1rem; font-weight: normal;">| Employer</span></div>
+        <ul class="navbar-nav">
+            <li><a href="employerdashboard.html" class="active">Dashboard</a></li>
+            <li><a href="jobmanagement.html">Job Management</a></li>
+            <li><a href="applicanttracking.html">Applicant Tracking</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="mb-2">Employer Dashboard</h2>
+        <div class="form-row">
+            <div class="card text-center" style="flex: 1;">
+                <h1 id="stat-active-jobs" style="font-size: 3rem; color: var(--secondary-blue);">0</h1>
+                <p class="text-light">Active Approved Jobs</p>
+            </div>
+            <div class="card text-center" style="flex: 1;">
+                <h1 id="stat-pending-apps" style="font-size: 3rem; color: var(--secondary-blue);">0</h1>
+                <p class="text-light">Applications to Review</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/employer-script.js"></script>
+</body>
+</html>

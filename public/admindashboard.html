@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsulWorks - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" style="background-color: #111827;"> 
+        <div class="navbar-brand">AsulWorks <span style="font-size: 1rem; font-weight: normal;">| Administrator</span></div>
+        <ul class="navbar-nav">
+            <li><a href="admindashboard.html" class="active">Job Regulation</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="mb-2">Pending Job Listings</h2>
+        <p class="text-light mb-2">Review job postings submitted by employers to ensure platform quality.</p>
+        
+        <div class="card" style="padding: 0; overflow-x: auto;">
+            <table class="tracking-table">
+                <thead>
+                    <tr>
+                        <th>Employer / Company</th>
+                        <th>Job Title</th>
+                        <th>Wage & Type</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-pending-jobs">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="js/admin-script.js"></script>
+</body>
+</html>
