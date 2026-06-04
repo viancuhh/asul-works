@@ -3,9 +3,9 @@
 // ==========================================
 
 // Global state to hold fetched data for fast filtering
-let activeJobs = []; 2
+let activeJobs = []; 
 let workerApps = [];
-const API_URL = '/api';2
+const API_URL = '/api';
 
 // --- PAGE ROUTER & INITIALIZER ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -130,6 +130,7 @@ async function handleRegister(event) {
     }
 
     const userData = {
+        role: 'Worker',
         firstName: document.getElementById('regFName').value,
         lastName: document.getElementById('regLName').value,
         mi: document.getElementById('regMI').value,
