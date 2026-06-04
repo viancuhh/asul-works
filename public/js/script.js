@@ -133,10 +133,8 @@ async function handleRegister(event) {
         role: 'Worker',
         firstName: document.getElementById('regFName').value,
         lastName: document.getElementById('regLName').value,
-        mi: document.getElementById('regMI').value,
         dob: document.getElementById('regDOB').value,
         contact: document.getElementById('regContact').value,
-        address: document.getElementById('regAddress').value,
         email: document.getElementById('regEmail').value,
         password: pass1
     };
